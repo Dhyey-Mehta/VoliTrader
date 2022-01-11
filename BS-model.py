@@ -2,6 +2,7 @@ import numpy as np
 from scipy.stats import norm as normal
 from scipy.special import ndtr
 
+
 # BlackScholes: Uses the Black-Scholes formula to provide a fair price for a European option (i.e. cannot be 
 #   exercised until expiry)
 def BlackScholes(timeToExp:float,stockPrice:float,strikePrice:float,riskFreeIntrest:float,volatility:float,typeOfOption:str="C")->float:
@@ -50,7 +51,6 @@ def estimateVolatility(error:float,timeToExp:float,stockPrice:float,strikePrice:
         # Newton's method
         else:
             vegaVal = vega(timeToExp,stockPrice,strikePrice,riskFreeIntrest,impliedVol)*100
-            impliedVol = impliedVol - (priceGivenCurrVol-optionPrice)/vegaVal
+            impliedVol -= (priceGivenCurrVol-optionPrice)/vegaVal
 
-    return impliedVol # Even if program did not reach error, return best estimate
-
+    return impliedVol # Even if program did not achieve desired error, return best estimate
