@@ -10,7 +10,6 @@ def generalSentiment(tweetObj:dict)->float:
     numPositive, numNegative, numNeutral = 0, 0, 0
 
     for tweet in arrayTweets:
-        print(analyzer.polarity_scores(tweet["text"]))
         sentiment = analyzer.polarity_scores(tweet["text"])["compound"]
         if (sentiment >= 0.05):
             numPositive += 1
@@ -20,5 +19,6 @@ def generalSentiment(tweetObj:dict)->float:
             numNegative += 1
         
     # Adopting sentiment score from Gabrovšek et al (2016) and adding a Laplace correction
+    # Note that sentiment score can range from -1 to 1
     sentimentScore = (numPositive - numNegative) / (numPositive + numNeutral + numNegative + 3)
     return sentimentScore
