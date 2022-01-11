@@ -35,7 +35,7 @@ def vega(timeToExp:float,stockPrice:float,strikePrice:float,riskFreeIntrest:floa
 # estimateVolatility: Uses the Newton-Raphson method to estimate volatility of an option given the current market price
 #   for that option
 def estimateVolatility(error:float,timeToExp:float,stockPrice:float,strikePrice:float,riskFreeIntrest:float,optionPrice:float,typeOfOption:str="C")->float:
-    # We start with an inital guess of Implied Volatility derived by Brenner and Subrahmanyam (1988)
+    # We start with an initial guess of Implied Volatility derived by Brenner and Subrahmanyam (1988)
     impliedVol = np.sqrt(2*np.pi / timeToExp) * optionPrice/strikePrice
 
     # Define the maximum number of iterations to avoid infinite loops
@@ -54,4 +54,3 @@ def estimateVolatility(error:float,timeToExp:float,stockPrice:float,strikePrice:
 
     return impliedVol # Even if program did not reach error, return best estimate
 
-print(estimateVolatility(0.01,0.5,30,28,0.025,5))
