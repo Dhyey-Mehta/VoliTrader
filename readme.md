@@ -18,6 +18,8 @@ VoliTrader is proof of concept. Any output from the program should be taken for 
 
 ### Resources that were helpful:
 
-https://arxiv.org/pdf/2012.05906.pdf
-https://www.investopedia.com/articles/investing/021716/strategies-trading-volatility-options-nflx.asp
-https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0173151
+A Sentiment Analysis Approach to the Prediction of Market Volatility - https://arxiv.org/pdf/2012.05906.pdf
+
+ Strategies for Trading Volatility With Options - https://www.investopedia.com/articles/investing/021716/strategies-trading-volatility-options-nflx.asp
+
+Twitter sentiment around the Earnings Announcement events - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0173151
