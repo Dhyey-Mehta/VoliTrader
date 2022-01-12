@@ -11,6 +11,3 @@ def sentimentToVol(sentimentScore):
     reg.fit(dataFrame[["senti"]].values,dataFrame.vol)
 
     return reg.predict([[sentimentScore]])[0]/100
-
-
-

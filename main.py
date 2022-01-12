@@ -11,7 +11,7 @@ def generateTradingStrategy(indexTicker:str):
     optionData = getOptionInfo(indexTicker)
     
     # Get implied volatility given current market conditions
-    impliedVol = estimateVolatility(0.01,
+    impliedVol = estimateVolatility(0.0001,
                                     optionData["timetoExp"],
                                     optionData["assetPrice"],
                                     optionData["strikePrice"],
