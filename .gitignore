@@ -1,3 +1,4 @@
 # Authentication for twitter api
 /data.csv
 /twitterAuth.py
+/sentiVol.h5

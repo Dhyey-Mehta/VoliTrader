@@ -1,13 +1,11 @@
-import pandas
-import numpy as np
-from sklearn import linear_model
+from tensorflow import keras
+
+# Loading a trained model from Keras from
+#   previous sentiment to volatility data
+model = keras.models.load_model('./sentiVol.h5')
 
 # A function to convert sentiment values into a 
 #   predicted volatility score
 def sentimentToVol(sentimentScore):
-    # Use historical sentiment and volatility data to from linear regression
-    dataFrame = pandas.read_csv("./data.csv")
-    reg = linear_model.LinearRegression()
-    reg.fit(dataFrame[["senti"]].values,dataFrame.vol)
-
-    return reg.predict([[sentimentScore]])[0]/100
+    ans = model.predict([sentimentScore])
+    return ans[0]
